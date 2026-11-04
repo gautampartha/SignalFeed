@@ -2,12 +2,12 @@
 
 Checked on 4 November 2026.
 
-## Current version: 1.2
+## Current version: 1.3
 
 - Production bundle: `npm run build` — passed.
 - iOS asset and plugin synchronization: `npm run ios:sync` — passed.
 - Signed physical-iPhone build: `xcodebuild` for the App scheme, Debug configuration, and iOS destination — **BUILD SUCCEEDED**.
-- Browser verification: `npm test` — **22 passed** in desktop Chrome and an iPhone-sized touch viewport.
+- Browser verification: `npm test` — **28 passed** in desktop Chrome and an iPhone-sized touch viewport.
 
 The checks cover:
 
@@ -29,3 +29,9 @@ The simulator build originally stalled during Xcode asset compilation. The physi
 ## Limits
 
 The mobile browser checks emulate an iPhone viewport; they are not physical-device Safari tests. All community content, employers, opportunities, and relevance scores are fictional. AI extraction, OCR, deduplication, and background notifications are simulated. Calendar exports contain the fixed demo dates in November 2026.
+
+## Layout and smoothness
+
+Verified that saving an opportunity retains the same card, navigation, scroll container, and scroll position. Community switches retain their sheet, picker, focus, and scroll position without restarting animations. Native-layout emulation at 393 × 852 with 62px top and 34px bottom safe areas has no frame shadow or horizontal overflow; the navigation stays within the viewport, text fields are at least 16px, and sheets fit a reduced keyboard viewport. These geometry checks emulate native conditions in Chrome, rather than inspecting physical-device pixels.
+
+The signed version 1.3 build succeeded and devicectl confirmed installation and launch on the connected iPhone 16 Pro. User preferences remain stored locally.

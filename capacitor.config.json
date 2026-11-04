@@ -2,5 +2,6 @@
   "appId": "com.signalfeed.demo",
   "appName": "SignalFeed",
   "webDir": "dist",
-  "ios": { "contentInset": "automatic", "backgroundColor": "#ffffff" }
+  "ios": { "contentInset": "never", "preferredContentMode": "mobile", "backgroundColor": "#ffffff" },
+  "plugins": { "StatusBar": { "overlaysWebView": true, "style": "LIGHT" } }
 }

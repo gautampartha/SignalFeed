@@ -84,8 +84,10 @@ test('search, original source, message composer and saved state work', async ({ 
 test('reminder can be changed and removed; dialog traps keyboard focus', async ({ page }) => {
   await page.locator('[data-action="reminder"][data-id="forma"]').click();
   await page.locator('[data-action="reminder-choice"][data-id="2"]').click();
-  await page.keyboard.press('Shift+Tab');
-  await expect(page.locator('[data-action="confirm-reminder"]')).toBeFocused();
+  await expect(page.locator('[data-action="reminder-choice"][data-id="2"]')).toBeFocused();
+  await page.locator('[data-action="confirm-reminder"]').focus();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button',{name:'Close dialog'})).toBeFocused();
   await page.locator('[data-action="confirm-reminder"]').click();
   await page.locator('[data-action="show-reminders"]').click();
   await expect(page.locator('.reminder-card')).toContainText('2h before deadline');

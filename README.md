@@ -64,6 +64,7 @@ Click **Play the internship demo** on desktop or **You → Play the internship d
 
 The guided demo temporarily uses sample sources and restores your personal community and interest selections afterward.
 
+- [Judges’ pitch (under 500 words)](demo/JUDGES_PITCH.md)
 - [90-second pitch script](demo/PRESENTATION.md)
 - [Recorded internship walkthrough](demo/internship-demo.webm)
 - [Browser and native verification notes](demo/VERIFICATION.md)
@@ -125,3 +126,11 @@ vite.config.js               Dev server and production bundle
 ```
 
 Generated bundles, dependencies, signing material, local test results, and Xcode user settings are excluded from Git.
+
+## iPhone layout and interaction refinement · version 1.3
+
+The native app uses an edge-to-edge mobile layout with a single safe-area inset, a fixed navigation bar, and a viewport that adjusts to the keyboard. The desktop phone frame is excluded from native screens in both themes. The initial setup screen is compact, and text fields use an iOS-safe size to prevent focus zoom.
+
+Screen updates patch existing DOM elements using morphdom. Saving and selecting preferences retain the active controls, scroll containers, and scroll positions. Sheets animate briefly when opened, then update in place; changing a switch does not replay the entrance. Native status-bar styling only updates when the theme changes.
+
+The browser suite now includes 28 checks, including stable element identity, source-picker scroll/focus retention, no repeated sheet animation, and safe-area/keyboard viewport sizing. Version 1.3 was built, installed, and launched on the connected iPhone.
