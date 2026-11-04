@@ -1,0 +1,15 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.DS_Store
+ios/App/App/public/
+ios/App/App/capacitor.config.json
+ios/App/Pods/
+ios/App/DerivedData/
+.env
+.env.*
+*.xcuserstate
+**/xcuserdata/
+*.p12
+*.mobileprovision

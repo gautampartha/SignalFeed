@@ -1,0 +1,6 @@
+{
+  "appId": "com.signalfeed.demo",
+  "appName": "SignalFeed",
+  "webDir": "dist",
+  "ios": { "contentInset": "automatic", "backgroundColor": "#ffffff" }
+}
